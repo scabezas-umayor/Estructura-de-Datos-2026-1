@@ -15,7 +15,8 @@ public class ListaEnlazadaSimple {
         }else{
             NodoEnteros aux = head;
             while (aux != null) {
-                System.out.println(aux.toString());
+                System.out.println(aux.toString(aux));
+                aux = aux.siguiente;
             }
         }
     }
@@ -32,6 +33,11 @@ public class ListaEnlazadaSimple {
 
     public static void main(String[] args) {
         ListaEnlazadaSimple les = new ListaEnlazadaSimple();
+        // Comenzamos con una lista vacia
+        les.mostrar();
+        // Insertamos el 9 al principio
+        les.insertarAlPrincipio(9);
+        // Una lista con el valor 9 ->
         les.mostrar();
 
     }
