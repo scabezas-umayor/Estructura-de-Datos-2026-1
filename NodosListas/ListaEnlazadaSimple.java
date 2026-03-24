@@ -24,10 +24,16 @@ public class ListaEnlazadaSimple {
         return head == null;
     }
 
+    public void insertarAlPrincipio(int _dato){
+        NodoEnteros nuevo = new NodoEnteros(_dato);
+        nuevo.siguiente = head;
+        head = nuevo;
+    }
+
     public static void main(String[] args) {
         ListaEnlazadaSimple les = new ListaEnlazadaSimple();
         les.mostrar();
-        
+
     }
 
 }

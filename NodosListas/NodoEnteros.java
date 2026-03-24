@@ -2,8 +2,8 @@ package NodosListas;
 
 public class NodoEnteros {
 
-    private int dato;
-    private NodoEnteros siguiente;
+    int dato;
+    NodoEnteros siguiente;
 
     public NodoEnteros(int _dato){
         this.dato = _dato;
