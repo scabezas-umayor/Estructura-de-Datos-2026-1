@@ -56,16 +56,16 @@ public class ListaEnlazadaSimple {
 
     public void quitar(int _dato){
         NodoEnteros aux = head;
-        int contador = 1;
+        //int contador = 1;
         while(aux.siguiente != null){
             if (aux.siguiente.dato == _dato){
-                System.out.println("Encontrado " + _dato + " Contador: " + contador);
+                // System.out.println("Encontrado " + _dato + " Contador: " + contador);
                 // le voy a quitar el que apunta el siguiente de mi aux
                 // se lo asigno al actual
                 aux.siguiente = aux.siguiente.siguiente;
             }
             aux = aux.siguiente;
-            contador++;
+            // contador++;
         }
     }
 
