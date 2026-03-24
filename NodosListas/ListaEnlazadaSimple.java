@@ -19,6 +19,7 @@ public class ListaEnlazadaSimple {
                 aux = aux.siguiente;
             }
         }
+        System.out.println("-------------------");
     }
 
     public boolean listaVacia(){
@@ -31,6 +32,43 @@ public class ListaEnlazadaSimple {
         head = nuevo;
     }
 
+    public void insertarAlFinal(int _dato){
+        NodoEnteros nuevo = new NodoEnteros(_dato);
+        NodoEnteros aux = head;
+        while(aux.siguiente != null){
+            aux = aux.siguiente;
+        }
+        aux.siguiente = nuevo;
+    }
+
+    public void insertarDespuesDe(int _dato, int _buscado){
+        NodoEnteros nuevo = new NodoEnteros(_dato);
+        NodoEnteros aux = head;
+        while(aux != null){
+            if (aux.dato == _buscado){
+                nuevo.siguiente = aux.siguiente;
+                aux.siguiente = nuevo;
+                break;
+            }
+            aux = aux.siguiente;
+        }
+    }
+
+    public void quitar(int _dato){
+        NodoEnteros aux = head;
+        int contador = 1;
+        while(aux.siguiente != null){
+            if (aux.siguiente.dato == _dato){
+                System.out.println("Encontrado " + _dato + " Contador: " + contador);
+                // le voy a quitar el que apunta el siguiente de mi aux
+                // se lo asigno al actual
+                aux.siguiente = aux.siguiente.siguiente;
+            }
+            aux = aux.siguiente;
+            contador++;
+        }
+    }
+
     public static void main(String[] args) {
         ListaEnlazadaSimple les = new ListaEnlazadaSimple();
         // Comenzamos con una lista vacia
@@ -38,6 +76,18 @@ public class ListaEnlazadaSimple {
         // Insertamos el 9 al principio
         les.insertarAlPrincipio(9);
         // Una lista con el valor 9 ->
+        les.mostrar();
+        les.insertarAlPrincipio(5);
+        les.mostrar();
+        les.insertarAlPrincipio(1);
+        les.mostrar();
+        les.insertarAlFinal(4);
+        les.mostrar();
+        les.insertarAlFinal(6);
+        les.mostrar();
+        les.insertarDespuesDe(8, 5);
+        les.mostrar();
+        les.quitar(8);
         les.mostrar();
 
     }
