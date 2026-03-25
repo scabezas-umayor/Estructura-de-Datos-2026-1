@@ -31,6 +31,17 @@ public class ListaSimplementeEnlazada {
         head = nuevo;
     }
 
+    public void insertarAlFinal(int _dato){
+        NodoEnteros nuevo = new NodoEnteros(_dato);
+        // recorrer
+        NodoEnteros aux = this.head;
+        while (aux.siguiente != null) {
+            aux = aux.siguiente;
+        }
+        // estoy en el ultimo
+        aux.siguiente = nuevo;
+    }
+
     public static void main(String[] args) {
         ListaSimplementeEnlazada lse = new ListaSimplementeEnlazada();
         lse.mostrar();
@@ -39,6 +50,8 @@ public class ListaSimplementeEnlazada {
         lse.insertarAlPrincipio(5);
         lse.mostrar();
         lse.insertarAlPrincipio(1);
+        lse.mostrar();
+        lse.insertarAlFinal(4);
         lse.mostrar();
     }
 
