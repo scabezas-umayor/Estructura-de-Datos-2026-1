@@ -58,6 +58,22 @@ public class ListaSimplementeEnlazada {
         }
     }
 
+    public void quitar(int _buscado){
+        NodoEnteros aux = this.head;
+        int contador = 1;
+        while (aux.siguiente != null ) { 
+            if (aux.siguiente.dato == _buscado) {
+                System.out.println("encontrado:" + _buscado + " posicion: "+ contador);
+                // estoy 1 antes
+                aux.siguiente = aux.siguiente.siguiente;
+                
+            }
+            aux = aux.siguiente; 
+            contador ++;
+            
+        }
+    }
+
     public static void main(String[] args) {
         ListaSimplementeEnlazada lse = new ListaSimplementeEnlazada();
         lse.mostrar();
@@ -70,6 +86,8 @@ public class ListaSimplementeEnlazada {
         lse.insertarAlFinal(4);
         lse.mostrar();
         lse.insertarDespuesDe(2, 5);
+        lse.mostrar();
+        lse.quitar(9);
         lse.mostrar();
     }
 
