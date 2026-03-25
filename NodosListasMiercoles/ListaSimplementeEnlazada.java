@@ -16,17 +16,29 @@ public class ListaSimplementeEnlazada {
         if (listaVacia()) {
             System.out.println("--- Lista Vacia ---");
         } else {
-            NodoEnteros aux = head;
+            NodoEnteros aux = this.head;
             while (aux != null) {
-                System.out.println(aux.toString());
+                System.out.println(aux.toString(aux));
                 aux = aux.siguiente;
             }
         }
         System.out.println("-------------------");
     }
 
+    public void insertarAlPrincipio(int _dato){
+        NodoEnteros nuevo = new NodoEnteros(_dato);
+        nuevo.siguiente = head;
+        head = nuevo;
+    }
+
     public static void main(String[] args) {
         ListaSimplementeEnlazada lse = new ListaSimplementeEnlazada();
+        lse.mostrar();
+        lse.insertarAlPrincipio(9);
+        lse.mostrar();
+        lse.insertarAlPrincipio(5);
+        lse.mostrar();
+        lse.insertarAlPrincipio(1);
         lse.mostrar();
     }
 
