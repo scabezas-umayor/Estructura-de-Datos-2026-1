@@ -42,6 +42,22 @@ public class ListaSimplementeEnlazada {
         aux.siguiente = nuevo;
     }
 
+    public void insertarDespuesDe(int _dato, int _buscado){
+        NodoEnteros nuevo = new NodoEnteros(_dato);
+        NodoEnteros aux = this.head;
+        while (aux != null) {
+            if (aux.dato == _buscado) {
+                // que el nuevo apunte al mismo que apunta el buscado
+                nuevo.siguiente = aux.siguiente;
+                // el buscado ahora apunta al nuevo
+                aux.siguiente = nuevo;
+                // ya se hizo el cambio
+                break;
+            }
+            aux = aux.siguiente;
+        }
+    }
+
     public static void main(String[] args) {
         ListaSimplementeEnlazada lse = new ListaSimplementeEnlazada();
         lse.mostrar();
@@ -52,6 +68,8 @@ public class ListaSimplementeEnlazada {
         lse.insertarAlPrincipio(1);
         lse.mostrar();
         lse.insertarAlFinal(4);
+        lse.mostrar();
+        lse.insertarDespuesDe(2, 5);
         lse.mostrar();
     }
 
