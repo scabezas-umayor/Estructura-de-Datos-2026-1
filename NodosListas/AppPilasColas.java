@@ -22,9 +22,9 @@ public class AppPilasColas {
 
         Cola c1 = new Cola();
 
-        c1.push(9);
-        c1.push(5);
-        c1.push(1);
+        c1.enqueue(9);
+        c1.enqueue(5);
+        c1.enqueue(1);
 
         if (c1.colaVacia()) {
             System.out.println("Cola Vacia");
