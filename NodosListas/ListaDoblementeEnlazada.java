@@ -33,6 +33,42 @@ public class ListaDoblementeEnlazada {
         }
     }
 
+    public void quitar(int _buscado) {
+        // antes de quitar, preguntamos si es
+        // el primero o el ultimo
+        if (this.first.dato == _buscado) {
+            this.first.siguiente.anterior = null;
+            this.first = this.first.siguiente;
+        } else if (this.last.dato == _buscado) {
+            this.last.anterior.siguiente = null;
+            this.last = this.last.anterior;
+        } else {
+            // recorremos
+            NodoEnteros aux = this.first;
+            while (aux != null) {
+                if (aux.dato == _buscado) {
+                    aux.anterior.siguiente = aux.siguiente;
+                    aux.siguiente.anterior = aux.anterior;
+                    //System.out.println("quitar: " + aux.dato);
+                }
+                aux = aux.siguiente;
+            }
+        }
+
+        /*
+         * // int contador = 1;
+         * if (aux.siguiente.dato == _dato) {
+         * // System.out.println("Encontrado " + _dato + " Contador: " + contador);
+         * // le voy a quitar el que apunta el siguiente de mi aux
+         * // se lo asigno al actual
+         * aux.siguiente = aux.siguiente.siguiente;
+         * }
+         * aux = aux.siguiente;
+         * // contador++;
+         * }
+         */
+    }
+
     public void mostrar(int _paDonde) {
         NodoEnteros aux;
         if (this.listaVacia()) {
