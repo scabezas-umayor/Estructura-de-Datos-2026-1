@@ -12,11 +12,32 @@ public class AppPilasColas {
             System.out.println("Pila Vacia");
         } else {
             NodoEnteros aux = p1.pop();
-            while (aux!=null) {
+            while (aux != null) {
                 System.out.println(aux.dato);
                 aux = aux.siguiente;
             }
         }
+
+        System.out.println("------");
+
+        Cola c1 = new Cola();
+
+        c1.push(9);
+        c1.push(5);
+        c1.push(1);
+
+        if (c1.colaVacia()) {
+            System.out.println("Cola Vacia");
+        } else {
+            System.out.println("Hay datos en la cola:");
+            NodoEnteros aux = c1.pop();
+
+            while (aux != null) {
+                System.out.println(aux.dato);
+                aux = aux.siguiente;
+            }
+        }
+
     }
 
 }
