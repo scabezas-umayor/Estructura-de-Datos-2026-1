@@ -8,7 +8,7 @@ public class Cola {
         return this.primero == null;
     }
 
-    public void push(int _dato) {
+    public void enqueue(int _dato) {
         NodoEnteros nuevo = new NodoEnteros(_dato);
 
         if (colaVacia()) {
