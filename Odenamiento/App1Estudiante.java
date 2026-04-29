@@ -16,9 +16,11 @@ public class App1Estudiante {
                 estudianteTilin
         };
 
-        Arrays.toString(listaEstudiantes);
-
         lib.printEstudiante(listaEstudiantes, "Lista 1");
+        
+        // Ordenamos la lista de estudiantes
+        Arrays.sort(listaEstudiantes);
+        lib.printEstudiante(listaEstudiantes, "Lista 1 - Ordenada");
 
     }
 }
