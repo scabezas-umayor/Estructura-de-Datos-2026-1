@@ -16,7 +16,7 @@ public class AppEjemplo1 {
         lib.printArregloEntero(numeros, "Ordenado");
 
         // Paso 2: Buscar
-        int buscado = 35;
+        int buscado = 50;
         int posicionBuscado = Arrays.binarySearch(numeros, buscado);
         if (posicionBuscado < 0) {
             System.out.println("Error 404: El " + buscado + " no fue encontrado.");
