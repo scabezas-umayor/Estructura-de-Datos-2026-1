@@ -18,7 +18,7 @@ public class App1Estudiante {
 
         lib.printEstudiante(listaEstudiantes, "Lista 1");
         
-        // Ordenamos la lista de estudiantes
+        // Ordenamos la lista de estudiantes por ID
         Arrays.sort(listaEstudiantes);
         lib.printEstudiante(listaEstudiantes, "Lista 1 - Ordenada");
 
