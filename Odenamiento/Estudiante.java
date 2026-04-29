@@ -7,6 +7,11 @@ public class Estudiante implements Comparable<Estudiante> {
     int id;
     String nombre;
 
+    public Estudiante(int _id, String _nombre) {
+        this.id = _id;
+        this.nombre = _nombre;
+    }
+
     @Override
     public int compareTo(Estudiante _otro) {
         // Ordenar por ID (ascendente)
