@@ -36,8 +36,6 @@ public class ArbolBinario {
             System.out.print(_nodo.dato + " ");
             recorridoPreOrden(_nodo.izquierdo);
             recorridoPreOrden(_nodo.derecho);
-        } else {
-            System.out.print("/");
         }
     }
 
@@ -47,8 +45,6 @@ public class ArbolBinario {
             recorridoPostOrden(_nodo.izquierdo);
             recorridoPostOrden(_nodo.derecho);
             System.out.print(_nodo.dato + " ");
-        } else {
-            System.out.print("/");
         }
     }
 
@@ -58,8 +54,6 @@ public class ArbolBinario {
             recorridoInOrden(_nodo.izquierdo);
             System.out.print(_nodo.dato + " ");
             recorridoInOrden(_nodo.derecho);
-        } else {
-            System.out.print("/");
         }
     }
 
