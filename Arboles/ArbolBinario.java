@@ -34,11 +34,21 @@ public class ArbolBinario {
     public void recorridoPreOrden(NodoArbol _nodo) {
         if (_nodo != null) {
             System.out.print(_nodo.dato + " ");
+            recorridoPreOrden(_nodo.izquierdo);
+            recorridoPreOrden(_nodo.derecho);
         } else {
             System.out.print("/");
         }
-        recorridoPreOrden(_nodo.izquierdo);
-        recorridoPreOrden(_nodo.derecho);
+    }
+    // 2.2 Post-Orden: Izquierda -> Derecha -> Raiz
+    public void recorridoPostOrden(NodoArbol _nodo) {
+        if (_nodo != null) {
+            recorridoPostOrden(_nodo.izquierdo);
+            recorridoPostOrden(_nodo.derecho);
+            System.out.print(_nodo.dato + " ");
+        }else{
+            System.out.print("/");
+        }
     }
 
 }
