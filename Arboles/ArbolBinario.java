@@ -40,19 +40,20 @@ public class ArbolBinario {
             System.out.print("/");
         }
     }
+
     // 2.2 Post-Orden: Izquierda -> Derecha -> Raiz
     public void recorridoPostOrden(NodoArbol _nodo) {
         if (_nodo != null) {
             recorridoPostOrden(_nodo.izquierdo);
             recorridoPostOrden(_nodo.derecho);
             System.out.print(_nodo.dato + " ");
-        }else{
+        } else {
             System.out.print("/");
         }
     }
 
     // 2.3 In-Orden: Izquierda -> Raiz -> Derecha
-    public void recorridoInOrden(NodoArbol _nodo){
+    public void recorridoInOrden(NodoArbol _nodo) {
         if (_nodo != null) {
             recorridoInOrden(_nodo.izquierdo);
             System.out.print(_nodo.dato + " ");
@@ -60,6 +61,11 @@ public class ArbolBinario {
         } else {
             System.out.print("/");
         }
+    }
+
+    // 3: Raiz
+    public NodoArbol getRaiz() {
+        return this.raiz;
     }
 
 }
