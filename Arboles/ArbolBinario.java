@@ -13,7 +13,7 @@ public class ArbolBinario {
         this.raiz = insertarRecursivo(this.raiz, _dato);
     }
 
-    private NodoArbol insertarRecursivo(NodoArbol _actual, int _dato){
+    private NodoArbol insertarRecursivo(NodoArbol _actual, int _dato) {
 
         if (_actual == null) {
             return new NodoArbol(_dato);
@@ -26,6 +26,19 @@ public class ArbolBinario {
         }
 
         return _actual;
+
+    }
+
+    // 2. Recorridos
+    // 2.1 Pre-Orden: Raiz -> Izquierda -> Derecha
+    public void recorridoPreOrden(NodoArbol _nodo) {
+        if (_nodo != null) {
+            System.out.print(_nodo.dato + " ");
+        } else {
+            System.out.print("/");
+        }
+        recorridoPreOrden(_nodo.izquierdo);
+        recorridoPreOrden(_nodo.derecho);
     }
 
 }
