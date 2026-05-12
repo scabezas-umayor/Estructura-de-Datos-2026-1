@@ -51,4 +51,15 @@ public class ArbolBinario {
         }
     }
 
+    // 2.3 In-Orden: Izquierda -> Raiz -> Derecha
+    public void recorridoInOrden(NodoArbol _nodo){
+        if (_nodo != null) {
+            recorridoInOrden(_nodo.izquierdo);
+            System.out.print(_nodo.dato + " ");
+            recorridoInOrden(_nodo.derecho);
+        } else {
+            System.out.print("/");
+        }
+    }
+
 }
