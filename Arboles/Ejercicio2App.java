@@ -7,6 +7,7 @@ public class Ejercicio2App {
         Biblioteca lib = new Biblioteca();
 
         int[] valores = { 50, 30, 70, 20, 40, 60, 80 };
+        // int[] valores = { 50, 30, 70, 20, 40 };
 
         // Mostrar el arbol con los datos
         lib.mostrarArreglo(valores, "Valores Iniciales");
@@ -30,5 +31,8 @@ public class Ejercicio2App {
         System.out.println("Nivel de [" + buscarNivel + "]: " + abv.obtenerNivel(buscarNivel));
         buscarNivel = 40;
         System.out.println("Nivel de [" + buscarNivel + "]: " + abv.obtenerNivel(buscarNivel));
+
+        System.out.println("Altura del árbol: " + abv.obtenerAltura(abv.getRaiz()));
+        System.out.println("Hojas del árbol: " + abv.contarHojas());
     }
 }

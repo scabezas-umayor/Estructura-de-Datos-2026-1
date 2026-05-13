@@ -100,4 +100,20 @@ public class ArbolBinarioVariante {
             return Math.max(alturaIzq, alturaDer) + 1;
         }
     }
+
+    public int contarHojas() {
+        return realizarConteoHojas(this.raiz);
+    }
+
+    private int realizarConteoHojas(NodoArbol _actual) {
+        if (_actual == null) {
+            return 0;
+        }
+
+        if (_actual.izquierdo == null && _actual.derecho == null) {
+            return 1;
+        }
+
+        return realizarConteoHojas(_actual.izquierdo) + realizarConteoHojas(_actual.derecho);
+    }
 }
