@@ -64,4 +64,30 @@ public class ArbolBinarioVariante {
         }
 
     }
+
+    // nivel: la distancia entre la raíz (la raíz está en nivel 0), de sus hijos en
+    // el nivel 1, y
+    // así sucesivamente.
+    public int obtenerNivel(int _valor) {
+        return calcularNivel(this.raiz, _valor, 0);
+    }
+
+    private int calcularNivel(NodoArbol _actual, int _valor, int _nivelActual) {
+        if (_actual == null) {
+            return -1;
+        }
+
+        if (_actual.dato == _valor) {
+            return _nivelActual;
+        }
+
+        if (_valor < _actual.dato) {
+            return calcularNivel(_actual.izquierdo, _valor, _nivelActual + 1);
+        } else {
+            return calcularNivel(_actual.derecho, _valor, _nivelActual + 1);
+        }
+
+    }
+
+    // altura: es el nivel máximo de cualquier nodo en el árbol + 1.
 }
