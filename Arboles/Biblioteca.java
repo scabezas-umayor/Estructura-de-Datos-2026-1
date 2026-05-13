@@ -18,4 +18,9 @@ public class Biblioteca {
         return ab;
     }
 
+    public int getAleatorioEntre(int _x, int _y){
+        // (casteo)
+        return (int) (Math.random() * (_y - _x + 1) + _x);
+    }
+
 }
