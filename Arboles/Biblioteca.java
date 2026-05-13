@@ -17,6 +17,14 @@ public class Biblioteca {
         }
         return ab;
     }
+    
+    public ArbolBinarioVariante poblarABVConArreglo(int[] _arreglo) {
+        ArbolBinarioVariante ab = new ArbolBinarioVariante();
+        for (int v : _arreglo) {
+            ab.insertar(v);
+        }
+        return ab;
+    }
 
     public int getAleatorioEntre(int _x, int _y){
         // (casteo)

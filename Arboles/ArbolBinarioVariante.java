@@ -32,31 +32,35 @@ public class ArbolBinarioVariante {
     }
 
     public void recorrido(NodoArbol _nodo, String _nombre) {
-        switch (_nombre.toLowerCase()) {
-            case "pre":
-                if (_nodo != null) {
-                    System.out.print(_nodo.dato + " ");
-                    recorrido(_nodo.izquierdo, "pre");
-                    recorrido(_nodo.derecho, "pre");
-                }
-                break;
-            case "post":
-                if (_nodo != null) {
-                    recorrido(_nodo.izquierdo, "post");
-                    recorrido(_nodo.derecho, "post");
-                    System.out.print(_nodo.dato + " ");
-                }
-                break;
-            case "in":
-                if (_nodo != null) {
-                    recorrido(_nodo.izquierdo, "in");
-                    System.out.print(_nodo.dato + " ");
-                    recorrido(_nodo.derecho, "in");
-                }
-                break;
-            default:
-                System.out.println("=== ERROR === No se ha definido el tipo de recorrido");
-                break;
+        try {
+            switch (_nombre.toLowerCase()) {
+                case "pre":
+                    if (_nodo != null) {
+                        System.out.print(_nodo.dato + " ");
+                        recorrido(_nodo.izquierdo, "pre");
+                        recorrido(_nodo.derecho, "pre");
+                    }
+                    break;
+                case "post":
+                    if (_nodo != null) {
+                        recorrido(_nodo.izquierdo, "post");
+                        recorrido(_nodo.derecho, "post");
+                        System.out.print(_nodo.dato + " ");
+                    }
+                    break;
+                case "in":
+                    if (_nodo != null) {
+                        recorrido(_nodo.izquierdo, "in");
+                        System.out.print(_nodo.dato + " ");
+                        recorrido(_nodo.derecho, "in");
+                    }
+                    break;
+                default:
+                    System.out.println("=== ERROR === No se ha definido el tipo de recorrido");
+                    break;
+            }
+        } catch (Exception e) {
+            System.out.println("=== ERROR === Cayó en la exception: " + e.getMessage());
         }
 
     }
