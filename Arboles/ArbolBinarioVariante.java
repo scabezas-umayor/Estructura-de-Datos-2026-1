@@ -90,4 +90,14 @@ public class ArbolBinarioVariante {
     }
 
     // altura: es el nivel máximo de cualquier nodo en el árbol + 1.
+    public int obtenerAltura(NodoArbol _nodo) {
+        if (_nodo == null) {
+            return 0; // es un arbol vacio
+        } else {
+            int alturaIzq = obtenerAltura(_nodo.izquierdo);
+            int alturaDer = obtenerAltura(_nodo.derecho);
+            // la altura es el máximo de ambos subárboles
+            return Math.max(alturaIzq, alturaDer) + 1;
+        }
+    }
 }
