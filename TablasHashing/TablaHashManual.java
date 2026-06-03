@@ -31,4 +31,18 @@ public class TablaHashManual {
             aux.siguiente = nuevo;
         }
     }
+
+    public String buscar(int _clave) {
+        int indice = funcionHash(_clave);
+        NodoHashManual aux = this.tabla[indice];
+
+        // Recorrido manual de la lista enlazada de colisiones
+        while (aux != null) {
+            if (aux.clave == _clave) {
+                return aux.valor;
+            }
+            aux = aux.siguiente;
+        }
+        return null;
+    }
 }
