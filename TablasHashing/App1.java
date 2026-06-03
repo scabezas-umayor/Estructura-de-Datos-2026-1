@@ -14,6 +14,11 @@ public class App1 {
         miTabla.insertar(35, "Monitor Gamer");
         System.out.println("--- Fin Insertar Valores ---");
 
+        // 2.1 insertar otros valores
+        miTabla.insertar(12, "Mouse");
+        miTabla.insertar(92, "Audífonos Bluetooth");
+        miTabla.insertar(47, "Memoria RAM 32 GB");
+
         // 3. Mostrar la tabla
         miTabla.mostrar();
     }
