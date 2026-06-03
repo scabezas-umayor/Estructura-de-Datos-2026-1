@@ -24,6 +24,20 @@ public class TablaHash {
         this.tabla[indice].add(new NodoHash(_clave, _valor));
     }
 
-    
+    public void mostrar() {
+        System.out.println("--- Mostrar Tabla (Inspeccionar Linked List) ---");
+        for (int i = 0; i < this.tam; i++) {
+            System.out.print("Indice [" + i + "]: ");
+            if (this.tabla[i].isEmpty()) {
+                System.out.println("null (Casilla Vacía)");
+            } else {
+                for (NodoHash aux : tabla[i]){
+                    System.out.print("-> [Clave: " + aux.clave + " | Valor: (" + aux.valor + ")]");
+                }
+                System.out.println("-> null");
+            }
+        }
+        System.out.println("--- --- fin mostrar --- ---\n");
+    }
 
 }
