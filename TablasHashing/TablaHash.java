@@ -15,6 +15,15 @@ public class TablaHash {
         }
     }
 
+    public int funcionHash(int _clave) {
+        return Math.abs(_clave) % this.tam;
+    }
+
+    public void insertar(int _clave, String _valor) {
+        int indice = funcionHash(_clave);
+        this.tabla[indice].add(new NodoHash(_clave, _valor));
+    }
+
     
 
 }
