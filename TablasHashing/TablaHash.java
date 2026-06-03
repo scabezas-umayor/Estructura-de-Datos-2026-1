@@ -31,13 +31,23 @@ public class TablaHash {
             if (this.tabla[i].isEmpty()) {
                 System.out.println("null (Casilla Vacía)");
             } else {
-                for (NodoHash aux : tabla[i]){
+                for (NodoHash aux : tabla[i]) {
                     System.out.print("-> [Clave: " + aux.clave + " | Valor: (" + aux.valor + ")]");
                 }
                 System.out.println("-> null");
             }
         }
         System.out.println("--- --- fin mostrar --- ---\n");
+    }
+
+    public String buscar(int _clave) {
+        int indice = funcionHash(_clave);
+        for (NodoHash aux : tabla[indice]) {
+            if(aux.clave == _clave){
+                return aux.valor;
+            }
+        }
+        return null;
     }
 
 }
