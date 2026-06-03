@@ -45,4 +45,22 @@ public class TablaHashManual {
         }
         return null;
     }
+
+    public void mostrar() {
+        System.out.println("--- Mostrar Tabla (Inspeccionar) ---");
+        for (int i = 0; i < this.tam; i++) {
+            System.out.print("Indice [" + i + "]: ");
+            if (this.tabla[i] == null) {
+                System.out.println("null (Casilla Vacía)");
+            } else {
+                NodoHashManual aux = this.tabla[i];
+                while (aux != null) {
+                    System.out.print("-> [Clave: " + aux.clave + " | Valor: (" + aux.valor + ")]");
+                    aux = aux.siguiente;
+                }
+                System.out.println("-> null");
+            }
+        }
+        System.out.println("--- --- fin mostrar --- ---\n");
+    }
 }
