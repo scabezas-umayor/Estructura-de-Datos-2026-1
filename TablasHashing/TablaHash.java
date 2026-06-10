@@ -43,7 +43,7 @@ public class TablaHash {
     public String buscar(int _clave) {
         int indice = funcionHash(_clave);
         for (NodoHash aux : tabla[indice]) {
-            if(aux.clave == _clave){
+            if (aux.clave == _clave) {
                 return aux.valor;
             }
         }
